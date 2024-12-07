@@ -41,4 +41,26 @@ class DisplayResolutionApplicationTests extends DisplayResolutionApplication {
         assertEquals(Integer.toString(0), result6);
     }
 
+    @Test void aspect() {
+        DisplayResolutionApplication application = new DisplayResolutionApplication();
+
+        String result = application.aspectRatio(1, 3);
+        assertEquals("1:3", result);
+
+        String result2 = application.aspectRatio(640, 480);
+        assertEquals("4:3", result2);
+
+        String result3 = application.aspectRatio(1920, 1080);
+        assertEquals("16:9", result3);
+
+        String result4 = application.aspectRatio(0, 0);
+        assertEquals("0:0", result4);
+
+        String result5 = application.aspectRatio(50, 0);
+        assertEquals("0:0", result5);
+
+        String result6 = application.aspectRatio(0, 50);
+        assertEquals("0:0", result6);
+    }
+
 }
